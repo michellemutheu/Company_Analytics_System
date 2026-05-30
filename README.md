@@ -1,103 +1,80 @@
 🏢 Company Workforce & Budget Analytics System
 
-Internal Analytics Dashboard (SQL-Based Reporting System)
+SQL-Based Internal Reporting & Resource Optimization Project
 
-A relational SQL analytics project simulating an internal company data system used by HR and Finance teams to monitor employee allocation, project distribution, and departmental budget efficiency.
+A relational SQL analytics system simulating how companies track employee allocation, project workload distribution, and budget efficiency across departments.
 
-This project demonstrates how real organizations use SQL to answer operational questions such as:
-
-Are employees properly allocated to projects?
-Which departments are over or under budget?
-Are there idle employees affecting productivity?
-Which teams are under workload pressure?
+This project demonstrates how raw organizational data can be transformed into actionable business insights using SQL.
 
 🎯 Business Problem
 
-In a mid-sized company, management faces three key challenges:
+Modern companies often struggle with:
 
-Resource inefficiency
-Some employees are not assigned to any project
-Others may be overloaded across multiple projects
-Budget vs salary imbalance
-Department budgets may not align with actual salary expenditure
-Lack of visibility in workload distribution
-No clear view of which departments are under pressure or underutilized
+Inefficient employee allocation across projects
+Budget overruns caused by staffing costs
+Uneven workload distribution between teams
+Idle employees with no assigned responsibilities
 
-This system simulates an internal SQL reporting layer to solve these issues.
+This system simulates how a company’s analytics team would detect and solve these issues using SQL-based reporting.
 
 🗄️ Database Structure
 
-This project uses multiple relational tables representing a company environment:
+This project is built on a relational schema representing a company environment:
 
-active_project_list
-Tracks ongoing projects and assigned resources
+employees → employee personal and salary data
+projects → project details and budgets
+employee_projects → mapping between employees and projects
 
-budget_vs_salary
-Compares departmental budget allocations vs actual salary costs
+📊 Key Business Reports
+1. Active Project Assignment Report
 
-high_salary_department
-Identifies departments with high average salary pressure
+Identifies projects with at least one assigned employee, helping distinguish active vs inactive initiatives.
 
-project_load_analysis
-Measures number of active projects per department
+2. Project Budget vs Salary Analysis
 
-unassigned_employees
-Identifies employees not allocated to any project
+Compares project budgets against total employee salary costs to detect financial pressure or overspending.
 
-📊 Business Questions Answered
+3. Salary Benchmarking by Department
 
-This system is designed to answer real operational questions:
+Finds employees earning above their department average to support compensation analysis and HR review.
 
-Which employees are currently unassigned and underutilized?
-Which departments are exceeding their budget limits?
-Which departments carry the highest project load?
-Are high-salary departments contributing proportionally to output?
-Where is resource allocation inefficient?
+4. Project Workload Classification
 
-🧠 SQL Concepts Applied
-Concept	Business Use Case
-EXISTS	Check if employees are actively assigned to projects
-NOT EXISTS	Identify idle or unassigned employees
-IN	Filter departments based on computed conditions
-JOIN	Combine HR, finance, and project data
-SUM / AVG	Measure financial and workload performance
-Subqueries	Compare departments and performance metrics
+Categorises projects into High, Medium, and Low workload based on employee assignment levels.
 
-📁 Query Modules
-🔹 Active Project Monitoring
+5. Unassigned Employee Report
 
-Identifies all currently active projects and validates employee assignment consistency.
+Identifies employees not assigned to any project, highlighting idle workforce capacity.
 
-🔹 Budget vs Salary Pressure Analysis
+🧠 SQL Concepts Demonstrated
+EXISTS / NOT EXISTS → resource allocation and filtering logic
+JOIN → relational data integration across HR and project systems
+GROUP BY → aggregation for reporting metrics
+SUM / AVG → financial and salary analysis
+CASE → business classification logic
+Subqueries → comparative departmental analysis
 
-Compares allocated department budgets against actual salary expenditure to detect overspending risks.
+📈 Key Insights Generated
+Some projects operate under significant budget pressure due to salary costs
+Certain employees earn above department averages, indicating compensation variation
+A portion of the workforce remains unassigned, suggesting unused capacity
+Projects can be classified into workload tiers for better resource planning
+Budget allocation does not always align with actual staffing costs
 
-🔹 High Salary Department Analysis
+💼 Business Impact
 
-Identifies departments with high average salary costs and evaluates financial sustainability.
+This system demonstrates how SQL can be used to:
 
-🔹 Project Load Analysis
-
-Measures how many active projects each department is handling to detect workload imbalance.
-
-🔹 Unassigned Employee Detection
-
-Finds employees not linked to any project, highlighting resource inefficiency.
-
-📈 Expected Insights
-
-This system can reveal insights such as:
-
-“Engineering department is over budget by 18% due to senior salary concentration”
-“Sales department has the highest number of unassigned employees”
-“2 departments handle 60% of total project workload”
-“5–12% of workforce remains idle at any time”
+Improve workforce allocation efficiency
+Support budget planning decisions
+Identify operational bottlenecks
+Enable data-driven HR and project management decisions
 
 🛠️ Tech Stack
 PostgreSQL / SQL
 Relational database design
-Subqueries & set-based logic
-Analytical reporting queries
+Analytical querying
+Business reporting logic
 
 👩‍💻 Author
 
